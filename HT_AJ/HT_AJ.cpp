@@ -1,5 +1,4 @@
 //Atte Jaakkola Harjoitustyo
-//Ohjelmassa ei toiminut setlocale joten on jouduttu menem‰‰n ‰=a jne tyylill‰
 #include <iostream>
 #include <vector>
 #include <string>
@@ -49,7 +48,7 @@ int main() {
     vector<huone> huoneet(huoneCount);
     for (int i = 0; i < huoneCount; ++i) {
         huoneet[i].number = i + 1;
-        huoneet[i].isSingle = i < huoneCount / 2; // Ensimmainen puolikas on 1hh, toinen puolikas 2hh
+        huoneet[i].isSingle = i < huoneCount / 2; 
         huoneet[i].isReserved = false;
         huoneet[i].price = huoneet[i].isSingle ? huoneHinta1 : huoneHinta2;
     }
@@ -60,7 +59,7 @@ int main() {
         int choice = getUserInputInt();
 
         switch (choice) {
-        case 1: { // Tee huonevaraus
+        case 1: { 
             cout << "Anna huonetyyppi (1 = yhden hengen huone, 2 = kahden hengen huone): ";
             int huoneType = getUserInputInt();
             cout << "Anna oiden lukumaara: ";
@@ -123,10 +122,10 @@ int main() {
 
 // Luo satunnainen huonemaara
 int generatehuoneCount() {
-    return huoneMin + (rand() % ((HuoneMAX_Limit - huoneMin + 1) / 2) * 2); // Parillinen maara
+    return huoneMin + (rand() % ((HuoneMAX_Limit - huoneMin + 1) / 2) * 2); 
 }
 
-// Luo satunnainen hinta, jossa perushinta vaihtelee 80ñ100 valilla
+
 int generatehuonePrice(int basePrice) {
     return basePrice + (rand() % 21); // +0...+20 euroa
 }
